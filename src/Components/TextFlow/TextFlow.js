@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const TextFlow = (props) => {
   return (
     <section className="textFlow-container">
