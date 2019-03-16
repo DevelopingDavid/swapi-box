@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const randomNum = Math.floor((Math.random() * 7) + 1);
+    const randomNum = Math.ceil((Math.random() * 7));
     fetch(`https://swapi.co/api/films/${randomNum}`)
     .then(response => response.json())
     .then(movie => this.setState({crawlText: movie.opening_crawl, movieTitle: movie.title, releaseDate: movie.release_date}))
