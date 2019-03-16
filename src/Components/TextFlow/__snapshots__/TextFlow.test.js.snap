@@ -3,7 +3,16 @@
 exports[`TextFlow should create snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TextFlow />,
+  Symbol(enzyme.__unrendered__): <TextFlow
+    movieInfo={
+      Object {
+        "crawlText": "It is a period of civil war.
+Rebel spaceships",
+        "movieTitle": "A New Hope",
+        "releaseDate": "1977-05-25",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -17,9 +26,161 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "host",
-    "props": Object {},
+    "props": Object {
+      "children": Array [
+        <div
+          className="fade"
+        />,
+        <div
+          className="star-wars"
+        >
+          <div
+            className="crawl"
+          >
+            <div
+              className="title"
+            >
+              <h3>
+                1977-05-25
+              </h3>
+              <h1>
+                A New Hope
+              </h1>
+            </div>
+            <p>
+              It is a period of civil war.
+Rebel spaceships
+            </p>
+          </div>
+        </div>,
+      ],
+      "className": "textFlow-container",
+    },
     "ref": null,
-    "rendered": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "fade",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="crawl"
+          >
+            <div
+              className="title"
+            >
+              <h3>
+                1977-05-25
+              </h3>
+              <h1>
+                A New Hope
+              </h1>
+            </div>
+            <p>
+              It is a period of civil war.
+Rebel spaceships
+            </p>
+          </div>,
+          "className": "star-wars",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title"
+              >
+                <h3>
+                  1977-05-25
+                </h3>
+                <h1>
+                  A New Hope
+                </h1>
+              </div>,
+              <p>
+                It is a period of civil war.
+Rebel spaceships
+              </p>,
+            ],
+            "className": "crawl",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3>
+                    1977-05-25
+                  </h3>,
+                  <h1>
+                    A New Hope
+                  </h1>,
+                ],
+                "className": "title",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "1977-05-25",
+                  },
+                  "ref": null,
+                  "rendered": "1977-05-25",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "A New Hope",
+                  },
+                  "ref": null,
+                  "rendered": "A New Hope",
+                  "type": "h1",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "It is a period of civil war.
+Rebel spaceships",
+              },
+              "ref": null,
+              "rendered": "It is a period of civil war.
+Rebel spaceships",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
     "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -27,9 +188,161 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
-      "props": Object {},
+      "props": Object {
+        "children": Array [
+          <div
+            className="fade"
+          />,
+          <div
+            className="star-wars"
+          >
+            <div
+              className="crawl"
+            >
+              <div
+                className="title"
+              >
+                <h3>
+                  1977-05-25
+                </h3>
+                <h1>
+                  A New Hope
+                </h1>
+              </div>
+              <p>
+                It is a period of civil war.
+Rebel spaceships
+              </p>
+            </div>
+          </div>,
+        ],
+        "className": "textFlow-container",
+      },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fade",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="crawl"
+            >
+              <div
+                className="title"
+              >
+                <h3>
+                  1977-05-25
+                </h3>
+                <h1>
+                  A New Hope
+                </h1>
+              </div>
+              <p>
+                It is a period of civil war.
+Rebel spaceships
+              </p>
+            </div>,
+            "className": "star-wars",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="title"
+                >
+                  <h3>
+                    1977-05-25
+                  </h3>
+                  <h1>
+                    A New Hope
+                  </h1>
+                </div>,
+                <p>
+                  It is a period of civil war.
+Rebel spaceships
+                </p>,
+              ],
+              "className": "crawl",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h3>
+                      1977-05-25
+                    </h3>,
+                    <h1>
+                      A New Hope
+                    </h1>,
+                  ],
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "1977-05-25",
+                    },
+                    "ref": null,
+                    "rendered": "1977-05-25",
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "A New Hope",
+                    },
+                    "ref": null,
+                    "rendered": "A New Hope",
+                    "type": "h1",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "It is a period of civil war.
+Rebel spaceships",
+                },
+                "ref": null,
+                "rendered": "It is a period of civil war.
+Rebel spaceships",
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
       "type": "section",
     },
   ],

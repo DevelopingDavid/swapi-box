@@ -42,7 +42,10 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "people": undefined,
+          "retrievePeople": undefined,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -80,7 +83,10 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "people": undefined,
+            "retrievePeople": undefined,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

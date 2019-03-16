@@ -10,8 +10,18 @@ describe('App', () => {
       <App/>
     )
   })
+
   it('should create snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   });
 
-})
+  it('should have default states', () => {
+    expect(wrapper.state()).toEqual({
+      crawlText: '',
+      movieTitle: '',
+      releaseDate: '',
+      people: []
+    });
+  });
+
+});

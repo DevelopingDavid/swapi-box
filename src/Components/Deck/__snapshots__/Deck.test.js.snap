@@ -3,7 +3,21 @@
 exports[`Deck should create snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Deck />,
+  Symbol(enzyme.__unrendered__): <Deck
+    cardInfo={
+      Object {
+        "people": Array [
+          Object {
+            "homeworld": "Tatooine",
+            "language": "Galactic Basic",
+            "name": "Luke Skywalker",
+            "population": "200000",
+            "species": "Human",
+          },
+        ],
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -17,9 +31,41 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "host",
-    "props": Object {},
+    "props": Object {
+      "children": Array [
+        <Card
+          personInfo={
+            Object {
+              "homeworld": "Tatooine",
+              "language": "Galactic Basic",
+              "name": "Luke Skywalker",
+              "population": "200000",
+              "species": "Human",
+            }
+          }
+        />,
+      ],
+    },
     "ref": null,
-    "rendered": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Luke Skywalker",
+        "nodeType": "function",
+        "props": Object {
+          "personInfo": Object {
+            "homeworld": "Tatooine",
+            "language": "Galactic Basic",
+            "name": "Luke Skywalker",
+            "population": "200000",
+            "species": "Human",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -27,9 +73,41 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
-      "props": Object {},
+      "props": Object {
+        "children": Array [
+          <Card
+            personInfo={
+              Object {
+                "homeworld": "Tatooine",
+                "language": "Galactic Basic",
+                "name": "Luke Skywalker",
+                "population": "200000",
+                "species": "Human",
+              }
+            }
+          />,
+        ],
+      },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Luke Skywalker",
+          "nodeType": "function",
+          "props": Object {
+            "personInfo": Object {
+              "homeworld": "Tatooine",
+              "language": "Galactic Basic",
+              "name": "Luke Skywalker",
+              "population": "200000",
+              "species": "Human",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

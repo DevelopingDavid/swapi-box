@@ -19,9 +19,30 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
-        <TextFlow />,
-        <Deck />,
+        <Header
+          people={Array []}
+          retrievePeople={[Function]}
+        />,
+        <TextFlow
+          movieInfo={
+            Object {
+              "crawlText": "",
+              "movieTitle": "",
+              "people": Array [],
+              "releaseDate": "",
+            }
+          }
+        />,
+        <Deck
+          cardInfo={
+            Object {
+              "crawlText": "",
+              "movieTitle": "",
+              "people": Array [],
+              "releaseDate": "",
+            }
+          }
+        />,
       ],
     },
     "ref": null,
@@ -30,7 +51,10 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "people": Array [],
+          "retrievePeople": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -39,7 +63,14 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "movieInfo": Object {
+            "crawlText": "",
+            "movieTitle": "",
+            "people": Array [],
+            "releaseDate": "",
+          },
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -48,7 +79,14 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "cardInfo": Object {
+            "crawlText": "",
+            "movieTitle": "",
+            "people": Array [],
+            "releaseDate": "",
+          },
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -63,9 +101,30 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
-          <TextFlow />,
-          <Deck />,
+          <Header
+            people={Array []}
+            retrievePeople={[Function]}
+          />,
+          <TextFlow
+            movieInfo={
+              Object {
+                "crawlText": "",
+                "movieTitle": "",
+                "people": Array [],
+                "releaseDate": "",
+              }
+            }
+          />,
+          <Deck
+            cardInfo={
+              Object {
+                "crawlText": "",
+                "movieTitle": "",
+                "people": Array [],
+                "releaseDate": "",
+              }
+            }
+          />,
         ],
       },
       "ref": null,
@@ -74,7 +133,10 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "people": Array [],
+            "retrievePeople": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -83,7 +145,14 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "movieInfo": Object {
+              "crawlText": "",
+              "movieTitle": "",
+              "people": Array [],
+              "releaseDate": "",
+            },
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -92,7 +161,14 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "cardInfo": Object {
+              "crawlText": "",
+              "movieTitle": "",
+              "people": Array [],
+              "releaseDate": "",
+            },
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

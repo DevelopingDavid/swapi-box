@@ -32,7 +32,7 @@ export default class Controls extends Component{
       const species = await response.json();
       return ({name: person.name, homeworld: person.homeworld, population: person.population, species: species.name, language: species.language});
     });
-    return Promise.all(unresolvedPromises)
+    return Promise.all(unresolvedPromises);
   }
   
   render() {
