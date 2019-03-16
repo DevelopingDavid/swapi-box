@@ -5,13 +5,34 @@ export default class Controls extends Component{
     super(props);
   }
 
-  recievePeople = () => {
+  recievePeople =  async () => {
+    let peopleArray = [];
     if(this.props.people.length === 0) {
-      fetch('https://swapi.co/api/people/')
-      .then(response => response.json())
-      .then(people => this.props.retrievePeople(people.results))
-      .catch(err => console.log(err))
+      const response = await fetch('https://swapi.co/api/people/?page=1')
+      const people = await response.json();
+      peopleArray.push(...people.results);
+      const homeworld = await this.recieveHomeWorld(peopleArray);
+      const finalData = await this.recieveSpecies(homeworld);
+      this.props.retrievePeople(finalData);
     }
+  }
+
+  recieveHomeWorld = (people) => {
+    const unresolvedPromises = people.map(async person => {
+      const response = await fetch(person.homeworld);
+      const home = await response.json();
+      return ({...person, homeworld: home.name, population: home.population});
+    });
+    return Promise.all(unresolvedPromises);
+  }
+
+  recieveSpecies = (people) => {
+    const unresolvedPromises = people.map(async person => {
+      const response = await fetch(person.species[0]);
+      const species = await response.json();
+      return ({name: person.name, homeworld: person.homeworld, population: person.population, species: species.name, language: species.language});
+    });
+    return Promise.all(unresolvedPromises)
   }
   
   render() {
