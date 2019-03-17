@@ -10,12 +10,17 @@ class App extends Component {
       crawlText: '',
       movieTitle: '',
       releaseDate: '',
-      people: []
+      people: [],
+      planets: []
     }
   }
 
   retrievePeople = (people) => {
     this.setState({people})
+  }
+
+  retrievePlanets = (planets) => {
+    this.setState({planets})
   }
 
   componentDidMount() {
@@ -29,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <section>
-        <Header retrievePeople={this.retrievePeople} people={this.state.people}/>
+        <Header retrievePeople={this.retrievePeople} retrievePlanets={this.retrievePlanets} state={this.state}/>
         <TextFlow movieInfo={this.state}/>
         <Deck cardInfo={this.state}/>
       </section>

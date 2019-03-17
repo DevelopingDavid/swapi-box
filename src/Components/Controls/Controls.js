@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { promised } from 'q';
 
 export default class Controls extends Component{
   constructor(props) {
@@ -7,13 +8,13 @@ export default class Controls extends Component{
 
   recievePeople =  async () => {
     let peopleArray = [];
-    if(this.props.people.length === 0) {
+    if(this.props.state.people.length === 0) {
       const response = await fetch('https://swapi.co/api/people/?page=1')
       const people = await response.json();
       peopleArray.push(...people.results);
       const homeworld = await this.recieveHomeWorld(peopleArray);
-      const finalData = await this.recieveSpecies(homeworld);
-      this.props.retrievePeople(finalData);
+      const peopleData = await this.recieveSpecies(homeworld);
+      this.props.retrievePeople(peopleData);
     }
   }
 
@@ -30,7 +31,55 @@ export default class Controls extends Component{
     const unresolvedPromises = people.map(async person => {
       const response = await fetch(person.species[0]);
       const species = await response.json();
-      return ({name: person.name, homeworld: person.homeworld, population: person.population, species: species.name, language: species.language});
+      return ({
+         name: person.name,
+         homeworld: person.homeworld,
+         population: person.population,
+         species: species.name,
+         language: species.language
+        });
+    });
+    return Promise.all(unresolvedPromises);
+  }
+
+  recievePlanets = async () => {
+    if(this.props.state.planets.length === 0) {
+      const response = await fetch('https://swapi.co/api/planets?page=1')
+      const planets = await response.json();
+      const planetsInfo = await this.recieveResidents(planets.results);
+      this.props.retrievePlanets(planetsInfo);
+    }
+  }
+
+  recieveResidents = (planets) => {
+    const unresolvedPromises = planets.map(async planet => {
+      if(planet.residents.length > 0) {
+        const residents = await this.recieveResident(planet.residents);
+        return ({
+          name: planet.name,
+          terrain: planet.terrain,
+          population: planet.population,
+          climate: planet.climate,
+          residents: residents
+        });
+      } else {
+        return ({
+          name: planet.name,
+          terrain: planet.terrain,
+          population: planet.population,
+          climate: planet.climate,
+          residents: ['N/A']
+        })
+      }
+    });
+    return Promise.all(unresolvedPromises);
+  }
+
+  recieveResident = (residentsLink) => {
+    const unresolvedPromises = residentsLink.map(async resident => {
+      const response = await fetch(resident);
+      const person = await response.json();
+      return person.name
     });
     return Promise.all(unresolvedPromises);
   }
@@ -39,7 +88,7 @@ export default class Controls extends Component{
     return (
       <section>
         <button onClick={this.recievePeople}>People</button>
-        <button>Planets</button>
+        <button onClick={this.recievePlanets}>Planets</button>
         <button>Vehicles</button>
         <button>Favorites</button>
         <h3>0</h3>
