@@ -4,7 +4,7 @@ const Header = (props) => {
   return (
     <section>
       <h1>Swapi-Box</h1>
-      <Controls retrievePeople={props.retrievePeople} retrievePlanets={props.retrievePlanets} setFilter={props.setFilter} state={props.state}/>
+      <Controls retrievePeople={props.retrievePeople} retrievePlanets={props.retrievePlanets} retrieveVehicles={props.retrieveVehicles} setFilter={props.setFilter} state={props.state}/>
     </section>
   )
 }

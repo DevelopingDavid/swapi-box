@@ -11,6 +11,10 @@ const Deck = (props) => {
     cards = props.cardInfo.planets.map(planet => (
       <Card key={planet.name} planetInfo={planet} state={props.cardInfo} />
     ));
+  } else if (props.cardInfo.currentFilter === 'vehicles') {
+    cards = props.cardInfo.vehicles.map(vehicle => (
+      <Card key={vehicle.name} vehicleInfo={vehicle} state={props.cardInfo} />
+    ));
   }
 
   return (

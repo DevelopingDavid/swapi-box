@@ -12,22 +12,27 @@ class App extends Component {
       releaseDate: '',
       people: [],
       planets: [],
+      vehicles: [],
       currentFilter: ''
     }
   }
 
   retrievePeople = (people, currentFilter) => {
-    this.setFilter(currentFilter)
-    this.setState({people})
+    this.setFilter(currentFilter);
+    this.setState({people});
   }
 
   retrievePlanets = (planets, currentFilter) => {
-    this.setFilter(currentFilter)
-    this.setState({planets})
+    this.setFilter(currentFilter);
+    this.setState({planets});
+  }
+  retrieveVehicles = (vehicles, currentFilter) => {
+    this.setFilter(currentFilter);
+    this.setState({vehicles});
   }
 
   setFilter = (currentFilter) => {
-    this.setState({currentFilter})
+    this.setState({currentFilter});
   }
 
   componentDidMount() {
@@ -41,7 +46,7 @@ class App extends Component {
   render() {
     return (
       <section>
-        <Header retrievePeople={this.retrievePeople} retrievePlanets={this.retrievePlanets} setFilter={this.setFilter} state={this.state}/>
+        <Header retrievePeople={this.retrievePeople} retrievePlanets={this.retrievePlanets} retrieveVehicles={this.retrieveVehicles} setFilter={this.setFilter} state={this.state}/>
         <TextFlow movieInfo={this.state}/>
         <Deck cardInfo={this.state}/>
       </section>

@@ -7,7 +7,7 @@ export default class Controls extends Component{
 
   recievePeople =  async () => {
     let peopleArray = [];
-    if(this.props.state.people.length === 0) {
+    if (this.props.state.people.length === 0) {
       const response = await fetch('https://swapi.co/api/people/?page=1')
       const people = await response.json();
       peopleArray.push(...people.results);
@@ -42,7 +42,7 @@ export default class Controls extends Component{
   }
 
   recievePlanets = async () => {
-    if(this.props.state.planets.length === 0) {
+    if (this.props.state.planets.length === 0) {
       const response = await fetch('https://swapi.co/api/planets?page=1')
       const planets = await response.json();
       const planetsInfo = await this.recieveResidents(planets.results);
@@ -52,7 +52,7 @@ export default class Controls extends Component{
 
   recieveResidents = (planets) => {
     const unresolvedPromises = planets.map(async planet => {
-      if(planet.residents.length > 0) {
+      if (planet.residents.length > 0) {
         const residents = await this.recieveResident(planet.residents);
         return ({
           name: planet.name,
@@ -82,13 +82,21 @@ export default class Controls extends Component{
     });
     return Promise.all(unresolvedPromises);
   }
+
+  recieveVehicles = async () => {
+    if (this.props.state.vehicles.length === 0) {
+      const response = await fetch('https://swapi.co/api/vehicles');
+      const vehicles = await response.json();
+      this.props.retrieveVehicles(vehicles.results, 'vehicles');
+    } else { this.props.setFilter('vehicles') }
+  }
   
   render() {
     return (
       <section>
         <button onClick={this.recievePeople}>People</button>
         <button onClick={this.recievePlanets}>Planets</button>
-        <button>Vehicles</button>
+        <button onClick={this.recieveVehicles}>Vehicles</button>
         <button>Favorites</button>
         <h3>0</h3>
       </section>
