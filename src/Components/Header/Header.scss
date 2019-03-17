@@ -1,0 +1,14 @@
+.header-container {
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 4.5rem;
+    color: #feda4a;
+    font-weight: 700;
+    margin: 20px;
+  }
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

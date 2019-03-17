@@ -37,7 +37,7 @@ class App extends Component {
 
   componentDidMount() {
     const randomNum = Math.ceil((Math.random() * 7));
-    fetch(`https://swapi.co/api/films/${randomNum}`)
+    fetch(`https://swapi.co/api/films/${randomNum}/`)
     .then(response => response.json())
     .then(movie => this.setState({crawlText: movie.opening_crawl, movieTitle: movie.title, releaseDate: movie.release_date}))
     .catch(err => console.log(err))
@@ -45,7 +45,7 @@ class App extends Component {
 
   render() {
     return (
-      <section>
+      <section className='app-container'>
         <Header retrievePeople={this.retrievePeople} retrievePlanets={this.retrievePlanets} retrieveVehicles={this.retrieveVehicles} setFilter={this.setFilter} state={this.state}/>
         <TextFlow movieInfo={this.state}/>
         <Deck cardInfo={this.state}/>

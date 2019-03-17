@@ -1,0 +1,21 @@
+button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  margin: 0 10px;
+  border: 2px solid #feda4a;
+  background: transparent;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+  &:hover {
+    background: #feda4a;
+    color: black;
+  }
+  &:focus {
+    background: #feda4a;
+    color: black;
+  }
+}

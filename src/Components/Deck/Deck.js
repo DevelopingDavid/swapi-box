@@ -18,7 +18,7 @@ const Deck = (props) => {
   }
 
   return (
-    <div>
+    <div className='cards-container'>
       {cards}
     </div>
   )

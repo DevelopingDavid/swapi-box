@@ -3,7 +3,7 @@ import React from 'react';
 const Card = (props) => {
   if(props.state.currentFilter === 'people') {
     return(
-      <article>
+      <article className='card-container'>
         <h1>{props.personInfo.name}</h1>
         <h2>Homeworld: {props.personInfo.homeworld}</h2>
         <h2>Species: {props.personInfo.species}</h2>
@@ -13,7 +13,7 @@ const Card = (props) => {
     )
   } else if (props.state.currentFilter === 'planets') {
     return (
-      <article>
+      <article className='card-container'>
         <h1>Name: {props.planetInfo.name}</h1>
         <h2>Terrain: {props.planetInfo.terrain}</h2>
         <h2>Population: {props.planetInfo.population}</h2>
@@ -23,8 +23,8 @@ const Card = (props) => {
     )
   } else if (props.state.currentFilter === 'vehicles') {
     return (
-      <article>
-        <h1>Name: {props.vehicleInfo.name}</h1>
+      <article className='card-container'>
+        <h1>{props.vehicleInfo.name}</h1>
         <h2>Model: {props.vehicleInfo.model}</h2>
         <h2>Class: {props.vehicleInfo.vehicle_class}</h2>
         <h2>Passengers: {props.vehicleInfo.passengers}</h2> 
