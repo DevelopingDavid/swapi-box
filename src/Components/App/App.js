@@ -11,16 +11,23 @@ class App extends Component {
       movieTitle: '',
       releaseDate: '',
       people: [],
-      planets: []
+      planets: [],
+      currentFilter: ''
     }
   }
 
-  retrievePeople = (people) => {
+  retrievePeople = (people, currentFilter) => {
+    this.setFilter(currentFilter)
     this.setState({people})
   }
 
-  retrievePlanets = (planets) => {
+  retrievePlanets = (planets, currentFilter) => {
+    this.setFilter(currentFilter)
     this.setState({planets})
+  }
+
+  setFilter = (currentFilter) => {
+    this.setState({currentFilter})
   }
 
   componentDidMount() {
@@ -34,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <section>
-        <Header retrievePeople={this.retrievePeople} retrievePlanets={this.retrievePlanets} state={this.state}/>
+        <Header retrievePeople={this.retrievePeople} retrievePlanets={this.retrievePlanets} setFilter={this.setFilter} state={this.state}/>
         <TextFlow movieInfo={this.state}/>
         <Deck cardInfo={this.state}/>
       </section>

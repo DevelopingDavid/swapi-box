@@ -2,13 +2,20 @@ import React from 'react';
 import Card from '../Card/Card';
 
 const Deck = (props) => {
-  const Cards = props.cardInfo.people.map(person => (
-    <Card key={person.name} personInfo={person} />
-  ));
+  let cards;
+  if(props.cardInfo.currentFilter === 'people') {
+    cards = props.cardInfo.people.map(person => (
+      <Card key={person.name} personInfo={person} state={props.cardInfo} />
+    ));
+  } else if (props.cardInfo.currentFilter === 'planets') {
+    cards = props.cardInfo.planets.map(planet => (
+      <Card key={planet.name} planetInfo={planet} state={props.cardInfo} />
+    ));
+  }
 
   return (
     <div>
-      {Cards}
+      {cards}
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { promised } from 'q';
 
 export default class Controls extends Component{
   constructor(props) {
@@ -14,8 +13,8 @@ export default class Controls extends Component{
       peopleArray.push(...people.results);
       const homeworld = await this.recieveHomeWorld(peopleArray);
       const peopleData = await this.recieveSpecies(homeworld);
-      this.props.retrievePeople(peopleData);
-    }
+      this.props.retrievePeople(peopleData, 'people');
+    } else { this.props.setFilter('people') }
   }
 
   recieveHomeWorld = (people) => {
@@ -47,8 +46,8 @@ export default class Controls extends Component{
       const response = await fetch('https://swapi.co/api/planets?page=1')
       const planets = await response.json();
       const planetsInfo = await this.recieveResidents(planets.results);
-      this.props.retrievePlanets(planetsInfo);
-    }
+      this.props.retrievePlanets(planetsInfo, 'planets');
+    } else { this.props.setFilter('planets') }
   }
 
   recieveResidents = (planets) => {
