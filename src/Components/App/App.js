@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import TextFlow from '../TextFlow/TextFlow';
 import Deck from '../Deck/Deck';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faJedi } from '@fortawesome/free-solid-svg-icons';
+library.add(faJedi)
 
 class App extends Component {
   constructor() {

@@ -7,11 +7,21 @@
   font-family: 'Orbitron', sans-serif;
   color: #feda4a;
   background-color: black;
-  h1 {
-    font-weight: bold;
-    font-size: 2rem;
-    padding: 15px 10px;
-    margin: 0;
+  div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-weight: bold;
+      font-size: 2rem;
+      padding: 15px 10px;
+      margin: 0;
+    }
+    .favorite {
+      font-size: 2rem;
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
   }
   h2 {
     font-weight: 400;
